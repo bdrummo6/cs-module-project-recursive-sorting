@@ -1,6 +1,6 @@
 # TO-DO: Implement a recursive implementation of binary search
 def binary_search(arr, target, start, end):
-    mid = start + (end-start) // 2  # Find the current list's middle index
+    mid = start + (end - start) // 2  # Find the current list's middle index
 
     # if the end value is less than the start value, entire list has been searched
     if end < start:
@@ -22,5 +22,25 @@ This version of binary search should correctly find the target regardless of whe
 sorted in ascending order or in descending order. You can implement this function either recursively or iteratively
 """
 def agnostic_binary_search(arr, target):
-    # Your code here
-    return
+    # set initial start and end points
+    start, end = 0, len(arr) - 1
+
+    while start <= end:
+        # Calculate the current middle index for each iteration
+        mid = start + (end - start) // 2
+
+        # if the target value is found in the list return the index
+        if target == arr[mid]:
+            return mid
+        elif arr[start] < arr[end]:  # if the list is in ascending order
+            if target < arr[mid]:  # if target less than middle value then check if target is in the first half
+                end = mid - 1
+            else:  # if target greater than middle value then check if target is in the second half
+                start = mid + 1
+        else:  # if the list is in descending order
+            if target > arr[mid]:  # if target greater than middle value then check if target is in the first half
+                end = mid - 1
+            else:  # if target less than middle value then check if target is in the second half
+                start = mid + 1
+
+    return -1  # if target not found
