@@ -27,8 +27,8 @@ When you begin interviewing for jobs, you will often encounter problems that hav
 
 ## Stretch goals
 
-- [ ] Implement an order-agnostic binary search that correctly performs binary search on an array sorted in either ascending order or descending order.
-- [ ] Test your order-agnostic binary search implementation by uncommenting the test in `test_searching.py`.
+- [X] Implement an order-agnostic binary search that correctly performs binary search on an array sorted in either ascending order or descending order.
+- [X] Test your order-agnostic binary search implementation by uncommenting the test in `test_searching.py`.
 - [ ] Implement an in-place version of `merge_sort` that does not allocate any additional memory. In other words, the space complexity for this function should be O(1).
 - [ ] Test your in-place merge sort implementation by uncommenting the test in `test_sorting.py`.
 
